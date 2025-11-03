@@ -55,7 +55,7 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           # No file specified, action defaults to common patterns like test-report.junit.xml
       - name: Upload coverage reports
-        uses: actions/upload-artifact@v4.4.0
+        uses: actions/upload-artifact@v5.0.0
         with:
           name: coverage-report
           path: coverage/ # Upload the whole coverage directory
@@ -104,7 +104,7 @@ jobs:
           echo "artifact_path=$ARTIFACT_NAME" >> $GITHUB_OUTPUT
 
       - name: Upload build artifact for release job
-        uses: actions/upload-artifact@v4.4.0
+        uses: actions/upload-artifact@v5.0.0
         with:
           name: release-artifact
           path: ${{ steps.archive_build.outputs.artifact_path }}
