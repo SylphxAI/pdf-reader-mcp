@@ -16,7 +16,7 @@ importers:
         version: 11.0.1
       pdfjs-dist:
         specifier: ^5.4.296
-        version: 5.4.296
+        version: 5.4.394
       pngjs:
         specifier: ^7.0.0
         version: 7.0.0
@@ -2225,8 +2225,8 @@ packages:
     resolution: {integrity: sha512-vE7JKRyES09KiunauX7nd2Q9/L7lhok4smP9RZTDeD4MVs72Dp2qNFVz39Nz5a0FVEW0BJR6C0DYrq6unoziZA==}
     engines: {node: '>= 14.16'}
 
-  pdfjs-dist@5.4.296:
-    resolution: {integrity: sha512-DlOzet0HO7OEnmUmB6wWGJrrdvbyJKftI1bhMitK7O2N8W2gc757yyYBbINy9IDafXAV9wmKr9t7xsTaNKRG5Q==}
+  pdfjs-dist@5.4.394:
+    resolution: {integrity: sha512-9ariAYGqUJzx+V/1W4jHyiyCep6IZALmDzoaTLZ6VNu8q9LWi1/ukhzHgE2Xsx96AZi0mbZuK4/ttIbqSbLypg==}
     engines: {node: '>=20.16.0 || >=22.3.0'}
 
   perfect-debounce@1.0.0:
@@ -5072,7 +5072,7 @@ snapshots:
 
   pathval@2.0.0: {}
 
-  pdfjs-dist@5.4.296:
+  pdfjs-dist@5.4.394:
     optionalDependencies:
       '@napi-rs/canvas': 0.1.81
 
