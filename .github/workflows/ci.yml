@@ -24,7 +24,7 @@ jobs:
           version: latest # Use the latest pnpm version
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4.0.3
+        uses: actions/setup-node@v6.0.0
         with:
           node-version: 'lts/*' # Use latest LTS
           cache: 'pnpm' # Let pnpm handle caching via pnpm/action-setup
@@ -78,7 +78,7 @@ jobs:
           version: latest
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4.0.3
+        uses: actions/setup-node@v6.0.0
         with:
           node-version: 'lts/*' # Use latest LTS
           registry-url: 'https://registry.npmjs.org/' # For pnpm publish
@@ -126,7 +126,7 @@ jobs:
           version: latest
 
       - name: Set up Node.js for NPM
-        uses: actions/setup-node@v4.0.3
+        uses: actions/setup-node@v6.0.0
         with:
           node-version: 'lts/*'
           registry-url: 'https://registry.npmjs.org/'
