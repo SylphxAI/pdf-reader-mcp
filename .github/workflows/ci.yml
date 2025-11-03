@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4.1.7
+        uses: actions/checkout@v5.0.0
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
@@ -70,7 +70,7 @@ jobs:
       artifact_path: ${{ steps.archive_build.outputs.artifact_path }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4.1.7
+        uses: actions/checkout@v5.0.0
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
@@ -118,7 +118,7 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/v') # Only run for tags
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4.1.7
+        uses: actions/checkout@v5.0.0
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
