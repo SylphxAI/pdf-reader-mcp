@@ -41,7 +41,7 @@ jobs:
       - name: Upload coverage to Codecov
         if: ${{ !cancelled() }}
         continue-on-error: true
-        uses: codecov/codecov-action@v4.5.0 # Use Codecov action with fixed version
+        uses: codecov/codecov-action@v5.5.1 # Use Codecov action with fixed version
         with:
           token: ${{ secrets.CODECOV_TOKEN }} # Use Codecov token
           files: ./coverage/lcov.info # Specify LCOV file path
