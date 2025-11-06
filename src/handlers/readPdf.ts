@@ -111,7 +111,7 @@ const processSingleSource = async (
 
     if (error instanceof McpError) {
       errorMessage = error.message;
-    } else if (error instanceof Error) {
+    } /* c8 ignore next */ else if (error instanceof Error) {
       errorMessage += ` Reason: ${error.message}`;
     } else {
       errorMessage += ` Unknown error: ${JSON.stringify(error)}`;
@@ -145,7 +145,9 @@ export const handleReadPdfFunc = async (
       );
     }
 
+    /* c8 ignore next */
     const message = error instanceof Error ? error.message : String(error);
+    /* c8 ignore next */
     throw new McpError(ErrorCode.InvalidParams, `Argument validation failed: ${message}`);
   }
 

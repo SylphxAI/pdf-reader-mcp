@@ -439,3 +439,41 @@ it('should handle getOperatorList errors', async () => {
 
   consoleWarnSpy.mockRestore();
 });
+
+it('should handle empty argsArray in operator list', async () => {
+  const mockPage = {
+    getOperatorList: vi.fn().mockResolvedValue({
+      fnArray: [89], // OPS.paintImageXObject
+      argsArray: [[]], // Empty argsArray
+    }),
+    objs: { get: vi.fn() },
+    commonObjs: { get: vi.fn() },
+  };
+
+  const mockDocument = {
+    numPages: 1,
+    getPage: vi.fn().mockResolvedValue(mockPage),
+  } as unknown as pdfjsLib.PDFDocumentProxy;
+
+  const result = await extractImages(mockDocument, [1]);
+  expect(result).toEqual([]);
+});
+
+it('should handle null argsArray in operator list', async () => {
+  const mockPage = {
+    getOperatorList: vi.fn().mockResolvedValue({
+      fnArray: [89], // OPS.paintImageXObject
+      argsArray: [null], // null argsArray
+    }),
+    objs: { get: vi.fn() },
+    commonObjs: { get: vi.fn() },
+  };
+
+  const mockDocument = {
+    numPages: 1,
+    getPage: vi.fn().mockResolvedValue(mockPage),
+  } as unknown as pdfjsLib.PDFDocumentProxy;
+
+  const result = await extractImages(mockDocument, [1]);
+  expect(result).toEqual([]);
+});

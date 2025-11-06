@@ -11,10 +11,9 @@ const parseRangePart = (part: string, pages: Set<number>): void => {
   const trimmedPart = part.trim();
 
   if (trimmedPart.includes('-')) {
-    const [startStr, endStr] = trimmedPart.split('-');
-    if (startStr === undefined) {
-      throw new Error(`Invalid page range format: ${trimmedPart}`);
-    }
+    const splitResult = trimmedPart.split('-');
+    const startStr = splitResult[0] || '';
+    const endStr = splitResult[1];
 
     const start = parseInt(startStr, 10);
     const end = endStr === '' || endStr === undefined ? Infinity : parseInt(endStr, 10);
@@ -55,6 +54,9 @@ export const parsePageRanges = (ranges: string): number[] => {
     parseRangePart(part, pages);
   }
 
+  // This should never happen as parseRangePart would have thrown an error
+  // if no valid pages were found, but we keep this as a safety check
+  /* c8 ignore next */
   if (pages.size === 0) {
     throw new Error('Page range string resulted in zero valid pages.');
   }

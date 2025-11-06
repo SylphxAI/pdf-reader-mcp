@@ -1284,4 +1284,20 @@ describe('handleReadPdfFunc Integration Tests', () => {
     const imageParts = result.content.filter((c) => c.type === 'image');
     expect(imageParts.length).toBe(1);
   });
+
+  it('should handle Error (not McpError) during processing', async () => {
+    // Mock getDocument to throw a regular Error (not McpError)
+    mockGetDocument.mockReturnValue({
+      promise: Promise.reject(new Error('Regular error message')),
+    });
+
+    const args = { sources: [{ path: 'error.pdf' }] };
+    const result = await handler(args);
+
+    expect(result.content).toBeDefined();
+    expect(result.content.length).toBeGreaterThan(0);
+    const parsedResult = JSON.parse(result.content[0].text) as ExpectedResultType;
+    expect(parsedResult.results[0].success).toBe(false);
+    expect(parsedResult.results[0].error).toContain('Regular error message');
+  });
 }); // End top-level describe

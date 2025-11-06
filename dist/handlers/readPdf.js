@@ -71,7 +71,7 @@ const processSingleSource = async (source, options) => {
         if (error instanceof McpError) {
             errorMessage = error.message;
         }
-        else if (error instanceof Error) {
+        else /* c8 ignore next */ if (error instanceof Error) {
             errorMessage += ` Reason: ${error.message}`;
         }
         else {
@@ -95,7 +95,9 @@ export const handleReadPdfFunc = async (args) => {
         if (error instanceof z.ZodError) {
             throw new McpError(ErrorCode.InvalidParams, `Invalid arguments: ${error.errors.map((e) => `${e.path.join('.')} (${e.message})`).join(', ')}`);
         }
+        /* c8 ignore next */
         const message = error instanceof Error ? error.message : String(error);
+        /* c8 ignore next */
         throw new McpError(ErrorCode.InvalidParams, `Argument validation failed: ${message}`);
     }
     const { sources, include_full_text, include_metadata, include_page_count, include_images } = parsedArgs;

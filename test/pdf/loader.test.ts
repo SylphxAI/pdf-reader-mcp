@@ -137,5 +137,34 @@ describe('loader', () => {
 
       await expect(loadPdfDocument({ path: 'test.pdf' }, 'test.pdf')).rejects.toThrow(mcpError);
     });
+
+    it('should use fallback message when PDF.js error message is empty', async () => {
+      const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+
+      vi.mocked(pdfjsLib.getDocument).mockReturnValue({
+        promise: Promise.reject(new Error('')),
+      } as pdfjsLib.PDFDocumentLoadingTask);
+
+      await expect(
+        loadPdfDocument({ url: 'https://example.com/bad.pdf' }, 'https://example.com/bad.pdf')
+      ).rejects.toThrow('Unknown loading error');
+
+      consoleErrorSpy.mockRestore();
+    });
+
+    it('should handle non-Error exception during file read with cause undefined', async () => {
+      vi.mocked(pathUtils.resolvePath).mockReturnValue('/safe/path/test.pdf');
+      const nonErrorObject = { code: 'SOME_ERROR' };
+      vi.mocked(fs.readFile).mockRejectedValue(nonErrorObject);
+
+      try {
+        await loadPdfDocument({ path: 'test.pdf' }, 'test.pdf');
+        expect.fail('Should have thrown');
+      } catch (error) {
+        expect(error).toBeInstanceOf(McpError);
+        // Verify that cause is undefined when error is not an Error instance
+        expect((error as McpError).cause).toBeUndefined();
+      }
+    });
   });
 });

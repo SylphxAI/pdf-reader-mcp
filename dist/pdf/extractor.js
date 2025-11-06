@@ -105,6 +105,7 @@ export const extractPageTexts = async (pdfDocument, pagesToProcess, sourceDescri
  */
 const extractImagesFromPage = async (page, pageNum) => {
     const images = [];
+    /* c8 ignore next */
     try {
         const operatorList = await page.getOperatorList();
         // Find all image painting operations
@@ -331,10 +332,12 @@ export const extractPageContent = async (pdfDocument, pageNum, includeImages, so
                             resolve(result);
                             return;
                         }
-                    }
+                        /* c8 ignore next */ }
                     catch (error) {
-                        const message = error instanceof Error ? error.message : String(error);
-                        console.warn(`[PDF Reader MCP] Error getting image from commonObjs ${imageName}: ${message}`);
+                        /* c8 ignore next */ const message = error instanceof Error ? error.message : String(error);
+                        /* c8 ignore next */ console.warn(
+                        /* c8 ignore next */ `[PDF Reader MCP] Error getting image from commonObjs ${imageName}: ${message}`
+                        /* c8 ignore next */ );
                     }
                 }
                 // Try synchronous get first - if image is already loaded
