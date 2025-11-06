@@ -10,20 +10,11 @@
 [![Downloads](https://img.shields.io/npm/dm/@sylphx/pdf-reader-mcp.svg)](https://www.npmjs.com/package/@sylphx/pdf-reader-mcp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-<table>
-<tr>
-<td align="center">
+<p align="center">
 <a href="https://mseep.ai/app/sylphxltd-pdf-reader-mcp">
-<img src="https://mseep.net/pr/sylphxltd-pdf-reader-mcp-badge.png" alt="MseeP.ai Security Assessment" width="200"/>
+<img src="https://mseep.net/pr/sylphxltd-pdf-reader-mcp-badge.png" alt="MseeP.ai Security Assessment" width="240"/>
 </a>
-</td>
-<td align="center">
-<a href="https://glama.ai/mcp/servers/@sylphx/pdf-reader-mcp">
-<img src="https://glama.ai/mcp/servers/@sylphx/pdf-reader-mcp/badge" alt="Glama MCP Server" width="340"/>
-</a>
-</td>
-</tr>
-</table>
+</p>
 
 **Trusted by developers worldwide** • **Battle-tested** • **Production-ready**
 
