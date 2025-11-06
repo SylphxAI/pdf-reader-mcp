@@ -34,56 +34,35 @@ describe('resolvePath Utility', () => {
     expect(resolvePath(userPath)).toBe(expectedPath);
   });
 
-  it('should throw McpError for path traversal attempts', () => {
+  it('should allow path traversal with relative paths', () => {
     const userPath = '../outside/secret.txt';
-    expect(() => resolvePath(userPath)).toThrow(McpError);
-    expect(() => resolvePath(userPath)).toThrow('Path traversal detected. Access denied.');
-    try {
-      resolvePath(userPath);
-    } catch (e) {
-      expect(e).toBeInstanceOf(McpError);
-      expect((e as McpError).code).toBe(ErrorCode.InvalidRequest);
-    }
+    const expectedPath = path.resolve(PROJECT_ROOT, userPath);
+    expect(resolvePath(userPath)).toBe(expectedPath);
   });
 
-  it('should throw McpError for path traversal attempts even if seemingly valid', () => {
-    // Construct a path that uses '..' many times to try and escape
+  it('should allow path traversal with multiple ".." components', () => {
+    // Construct a path that uses '..' many times
     const levelsUp = PROJECT_ROOT.split(path.sep).filter(Boolean).length + 2; // Go up more levels than the root has
     const userPath = path.join(...(Array(levelsUp).fill('..') as string[]), 'secret.txt'); // Cast array to string[]
-    expect(() => resolvePath(userPath)).toThrow(McpError);
-    expect(() => resolvePath(userPath)).toThrow('Path traversal detected. Access denied.');
-    try {
-      resolvePath(userPath);
-    } catch (e) {
-      expect(e).toBeInstanceOf(McpError);
-      expect((e as McpError).code).toBe(ErrorCode.InvalidRequest);
-    }
+    const expectedPath = path.resolve(PROJECT_ROOT, userPath);
+    expect(resolvePath(userPath)).toBe(expectedPath);
   });
 
-  it('should throw McpError for absolute paths', () => {
+  it('should accept absolute paths and return them normalized', () => {
     const userPath = path.resolve(PROJECT_ROOT, 'absolute/file.txt'); // An absolute path
     const userPathPosix = '/absolute/file.txt'; // POSIX style absolute path
     const userPathWin = 'C:\\absolute\\file.txt'; // Windows style absolute path
 
-    expect(() => resolvePath(userPath)).toThrow(McpError);
-    expect(() => resolvePath(userPath)).toThrow('Absolute paths are not allowed.');
+    // Should return the normalized absolute path
+    expect(resolvePath(userPath)).toBe(path.normalize(userPath));
 
     // Test specifically for POSIX and Windows style absolute paths if needed
     if (path.sep === '/') {
       // POSIX-like
-      expect(() => resolvePath(userPathPosix)).toThrow(McpError);
-      expect(() => resolvePath(userPathPosix)).toThrow('Absolute paths are not allowed.');
+      expect(resolvePath(userPathPosix)).toBe(path.normalize(userPathPosix));
     } else {
       // Windows-like
-      expect(() => resolvePath(userPathWin)).toThrow(McpError);
-      expect(() => resolvePath(userPathWin)).toThrow('Absolute paths are not allowed.');
-    }
-
-    try {
-      resolvePath(userPath);
-    } catch (e) {
-      expect(e).toBeInstanceOf(McpError);
-      expect((e as McpError).code).toBe(ErrorCode.InvalidParams);
+      expect(resolvePath(userPathWin)).toBe(path.normalize(userPathWin));
     }
   });
 

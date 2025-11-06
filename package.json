@@ -66,21 +66,21 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "1.20.2",
+    "@modelcontextprotocol/sdk": "^1.21.0",
     "glob": "^11.0.1",
     "pdfjs-dist": "^5.4.296",
     "pngjs": "^7.0.0",
-    "zod": "^3.24.2",
-    "zod-to-json-schema": "^3.24.5"
+    "zod": "^3.25.76",
+    "zod-to-json-schema": "^3.24.6"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.2",
-    "@commitlint/cli": "^19.8.0",
-    "@commitlint/config-conventional": "^19.8.0",
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
     "@types/glob": "^8.1.0",
     "@types/node": "^24.0.7",
     "@types/pngjs": "^6.0.5",
-    "@vitest/coverage-v8": "^3.1.1",
+    "@vitest/coverage-v8": "^4.0.7",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.6",
     "standard-version": "^9.5.0",
@@ -88,7 +88,7 @@
     "typedoc-plugin-markdown": "^4.9.0",
     "typescript": "^5.8.3",
     "vitepress": "^1.6.3",
-    "vitest": "^3.1.1",
+    "vitest": "^4.0.7",
     "vue": "^3.5.13"
   },
   "commitlint": {

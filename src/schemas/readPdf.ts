@@ -17,7 +17,11 @@ export const pageSpecifierSchema = z.union([
 // Schema for a single PDF source (path or URL)
 export const pdfSourceSchema = z
   .object({
-    path: z.string().min(1).optional().describe('Relative path to the local PDF file.'),
+    path: z
+      .string()
+      .min(1)
+      .optional()
+      .describe('Path to the local PDF file (absolute or relative to cwd).'),
     url: z.string().url().optional().describe('URL of the PDF file.'),
     pages: pageSpecifierSchema
       .optional()

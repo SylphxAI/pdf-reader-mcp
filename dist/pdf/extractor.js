@@ -1,6 +1,6 @@
 // PDF text and metadata extraction utilities
-import { PNG } from 'pngjs';
 import { OPS } from 'pdfjs-dist/legacy/build/pdf.mjs';
+import { PNG } from 'pngjs';
 /**
  * Encode raw pixel data to PNG format
  */
