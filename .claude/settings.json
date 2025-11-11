@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "npx -y github:sylphxltd/flow hook --type session --target claude-code"
+            "command": "npx -y github:SylphxAI/flow hook --type session --target claude-code"
           }
         ]
       }
@@ -15,7 +15,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "npx -y github:sylphxltd/flow hook --type message --target claude-code"
+            "command": "npx -y github:SylphxAI/flow hook --type message --target claude-code"
           }
         ]
       }
@@ -26,7 +26,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "npx -y github:sylphxltd/flow hook --type notification --target claude-code"
+            "command": "npx -y github:SylphxAI/flow hook --type notification --target claude-code"
           }
         ]
       }

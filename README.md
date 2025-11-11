@@ -4,16 +4,16 @@
 
 **The fastest and most powerful PDF processing server for AI agents**
 
-[![CI/CD](https://github.com/sylphxltd/pdf-reader-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/sylphxltd/pdf-reader-mcp/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/sylphxltd/pdf-reader-mcp/graph/badge.svg?token=VYRQFB40UN)](https://codecov.io/gh/sylphxltd/pdf-reader-mcp)
+[![CI/CD](https://github.com/SylphxAI/pdf-reader-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/SylphxAI/pdf-reader-mcp/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/SylphxAI/pdf-reader-mcp/graph/badge.svg?token=VYRQFB40UN)](https://codecov.io/gh/SylphxAI/pdf-reader-mcp)
 [![npm version](https://badge.fury.io/js/%40sylphx%2Fpdf-reader-mcp.svg)](https://www.npmjs.com/package/@sylphx/pdf-reader-mcp)
 [![Downloads](https://img.shields.io/npm/dm/@sylphx/pdf-reader-mcp.svg)](https://www.npmjs.com/package/@sylphx/pdf-reader-mcp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 **5-10x faster parallel processing** • **Y-coordinate content ordering** • **94%+ test coverage** • **Production-ready**
 
-<a href="https://mseep.ai/app/sylphxltd-pdf-reader-mcp">
-<img src="https://mseep.net/pr/sylphxltd-pdf-reader-mcp-badge.png" alt="Security Validated" width="200"/>
+<a href="https://mseep.ai/app/SylphxAI-pdf-reader-mcp">
+<img src="https://mseep.net/pr/SylphxAI-pdf-reader-mcp-badge.png" alt="Security Validated" width="200"/>
 </a>
 
 </div>
@@ -548,7 +548,7 @@ Restart MCP client completely.
 
 **Setup:**
 ```bash
-git clone https://github.com/sylphxltd/pdf-reader-mcp.git
+git clone https://github.com/SylphxAI/pdf-reader-mcp.git
 cd pdf-reader-mcp
 pnpm install && pnpm build
 ```
@@ -600,7 +600,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 ## 📚 Documentation
 
-- 📖 [Full Docs](https://sylphxltd.github.io/pdf-reader-mcp/) - Complete guides
+- 📖 [Full Docs](https://SylphxAI.github.io/pdf-reader-mcp/) - Complete guides
 - 🚀 [Getting Started](./docs/guide/getting-started.md) - Quick start
 - 📘 [API Reference](./docs/api/README.md) - Detailed API
 - 🏗️ [Design](./docs/design/index.md) - Architecture
@@ -627,17 +627,17 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md)
 - [ ] Advanced caching
 - [ ] PDF generation
 
-Vote at [Discussions](https://github.com/sylphxltd/pdf-reader-mcp/discussions)
+Vote at [Discussions](https://github.com/SylphxAI/pdf-reader-mcp/discussions)
 
 ---
 
 ## 🤝 Support
 
-[![Issues](https://img.shields.io/github/issues/sylphxltd/pdf-reader-mcp?style=for-the-badge&logo=github)](https://github.com/sylphxltd/pdf-reader-mcp/issues)
-[![Discussions](https://img.shields.io/github/discussions/sylphxltd/pdf-reader-mcp?style=for-the-badge&logo=github)](https://github.com/sylphxltd/pdf-reader-mcp/discussions)
+[![Issues](https://img.shields.io/github/issues/SylphxAI/pdf-reader-mcp?style=for-the-badge&logo=github)](https://github.com/SylphxAI/pdf-reader-mcp/issues)
+[![Discussions](https://img.shields.io/github/discussions/SylphxAI/pdf-reader-mcp?style=for-the-badge&logo=github)](https://github.com/SylphxAI/pdf-reader-mcp/discussions)
 
-- 🐛 [Bug Reports](https://github.com/sylphxltd/pdf-reader-mcp/issues)
-- 💬 [Discussions](https://github.com/sylphxltd/pdf-reader-mcp/discussions)
+- 🐛 [Bug Reports](https://github.com/SylphxAI/pdf-reader-mcp/issues)
+- 💬 [Discussions](https://github.com/SylphxAI/pdf-reader-mcp/discussions)
 - 📖 [Contributing](./CONTRIBUTING.md)
 - 📧 contact@sylphx.com
 
@@ -648,10 +648,10 @@ Vote at [Discussions](https://github.com/sylphxltd/pdf-reader-mcp/discussions)
 
 ## 📊 Stats
 
-![Stars](https://img.shields.io/github/stars/sylphxltd/pdf-reader-mcp?style=social)
-![Forks](https://img.shields.io/github/forks/sylphxltd/pdf-reader-mcp?style=social)
+![Stars](https://img.shields.io/github/stars/SylphxAI/pdf-reader-mcp?style=social)
+![Forks](https://img.shields.io/github/forks/SylphxAI/pdf-reader-mcp?style=social)
 ![Downloads](https://img.shields.io/npm/dm/@sylphx/pdf-reader-mcp)
-![Contributors](https://img.shields.io/github/contributors/sylphxltd/pdf-reader-mcp)
+![Contributors](https://img.shields.io/github/contributors/SylphxAI/pdf-reader-mcp)
 
 **103 Tests** • **94%+ Coverage** • **Production Ready**
 
@@ -662,7 +662,7 @@ Vote at [Discussions](https://github.com/sylphxltd/pdf-reader-mcp/discussions)
 **Featured on:**
 - [Smithery](https://smithery.ai/server/@sylphx/pdf-reader-mcp) - MCP directory
 - [Glama](https://glama.ai/mcp/servers/@sylphx/pdf-reader-mcp) - AI marketplace
-- [MseeP.ai](https://mseep.ai/app/sylphxltd-pdf-reader-mcp) - Security validated
+- [MseeP.ai](https://mseep.ai/app/SylphxAI-pdf-reader-mcp) - Security validated
 
 **Trusted worldwide** • **Enterprise adoption** • **Battle-tested**
 
