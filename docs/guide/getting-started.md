@@ -26,7 +26,7 @@ The `read_pdf` tool accepts an object with the following properties:
 - `include_metadata` (boolean, optional, default: `true`): Include metadata and info objects for each PDF.
 - `include_page_count` (boolean, optional, default: `true`): Include the total number of pages for each PDF.
 
-_(See the [API Reference](./api/) (once generated) for the full JSON schema)_
+_(See the API Reference (once generated) for the full JSON schema)_
 
 **Example MCP Request (Get metadata and page count for one PDF):**
 
@@ -80,4 +80,4 @@ The response will be an array named `results`, with each element corresponding t
   - `code` (string): An error code (e.g., `FileNotFound`, `InvalidRequest`, `PdfParsingError`, `DownloadError`, `UnknownError`).
   - `message` (string): A description of the error.
 
-_(See the [API Reference](./api/) (once generated) for detailed response structure and error codes.)_
+_(See the API Reference (once generated) for detailed response structure and error codes.)_
